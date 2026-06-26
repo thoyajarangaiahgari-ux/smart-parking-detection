@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Parking Analysis Result</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+min-height:100vh;
+
+background:
+linear-gradient(
+135deg,
+#e0f2fe,
+#dbeafe,
+#ecfeff
+);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+padding:40px;
+}
+
+.container{
+
+max-width:1000px;
+width:100%;
+
+background:white;
+
+border-radius:30px;
+
+padding:40px;
+
+box-shadow:
+0 20px 60px rgba(0,0,0,0.15);
+
+animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.logo{
+font-size:60px;
+text-align:center;
+margin-bottom:10px;
+}
+
+.main-title{
+text-align:center;
+font-size:20px;
+color:#64748b;
+margin-bottom:25px;
+}
+
+.status-card{
+
+padding:25px;
+
+border-radius:20px;
+
+background:
+linear-gradient(
+135deg,
+#dbeafe,
+#ecfeff
+);
+
+text-align:center;
+
+margin-bottom:25px;
+}
+
+.status-card h2{
+font-size:38px;
+color:#0f766e;
+}
+
+.message{
+font-size:22px;
+line-height:1.8;
+text-align:center;
+color:#475569;
+margin-bottom:25px;
+padding:0 20px;
+}
+
+.result-image{
+display:block;
+
+margin:25px auto;
+
+width:100%;
+max-width:500px;
+
+height:300px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,0.15);
+}
+
+.thank-you{
+
+margin-top:35px;
+
+text-align:center;
+}
+
+.thank-you h3{
+font-size:30px;
+color:#1e293b;
+margin-bottom:10px;
+}
+
+.thank-you p{
+font-size:18px;
+color:#64748b;
+}
+
+.btn{
+
+display:inline-block;
+
+margin-top:25px;
+
+padding:15px 35px;
+
+background:
+linear-gradient(
+135deg,
+#2563eb,
+#06b6d4
+);
+
+color:white;
+
+text-decoration:none;
+
+border-radius:12px;
+
+font-size:18px;
+font-weight:600;
+
+transition:0.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">🚗</div>
+
+<div class="main-title">
+Smart Parking Detection System
+</div>
+
+<div class="status-card">
+<h2>{{ result }}</h2>
+</div>
+
+<p class="message">
+{{ message }}
+</p>
+
+<img
+class="result-image"
+src="{{ url_for('static', filename='images/' + image_name) }}"
+alt="Parking Result">
+
+<div class="thank-you">
+
+<h3>
+Thank You For Visiting
+</h3>
+
+<p>
+Smart Parking Detection System
+</p>
+
+<a href="/" class="btn">
+Analyze Another Image
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
