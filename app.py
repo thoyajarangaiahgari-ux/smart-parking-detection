@@ -11,7 +11,7 @@ model = load_model(
     r"smart_parking_cnn.h5"
 )
 
-UPLOAD_FOLDER = r"C:\smartwebsite\python\uploads"
+UPLOAD_FOLDER = r"uploads"
 
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
