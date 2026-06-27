@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 # Load your trained CNN model
 model = load_model(
-    r"C:\Users\DELL\Desktop\thoya\kendidatam\smart_parking_cnn.h5"
+    r"smart_parking_cnn.h5"
 )
 
 UPLOAD_FOLDER = r"C:\smartwebsite\python\uploads"
